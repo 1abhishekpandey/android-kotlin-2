@@ -3,7 +3,6 @@ import java.io.File
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
-import org.gradle.kotlin.dsl.provideDelegate
 
 object RudderStackBuildConfig {
 
