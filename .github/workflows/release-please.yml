@@ -1,4 +1,4 @@
-name: Run Release Please
+gcname: Run Release Please
 on:
   push:
     branches:
@@ -20,5 +20,5 @@ jobs:
         id: release
         with:
           command: manifest
-          token: ${ { secrets.TOKEN } }
+          token: ${{ secrets.TOKEN }}
           default-branch: main
