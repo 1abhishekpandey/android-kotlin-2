@@ -18,6 +18,7 @@ object RudderAnalyticsUtils {
     lateinit var analytics: Analytics
 
     fun initialize(application: Application) {
+        // Change SDK init snippet
         analytics = Analytics(
             configuration = Configuration(
                 trackApplicationLifecycleEvents = true,
