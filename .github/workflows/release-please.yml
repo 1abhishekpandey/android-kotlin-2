@@ -23,9 +23,8 @@ jobs:
       #     default-branch: main
 
       - name: Release Please
-        uses: googleapis/release-please-action@v2
+        uses: googleapis/release-please-action@v4
+        id: release-please
         with:
           release-type: "maven"
-          package-name: "android, core"
           token: ${{ secrets.TOKEN }}
-          repo-url: "https://github.com/1abhishekpandey/abhishek-kotlin"
