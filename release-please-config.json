@@ -5,15 +5,26 @@
       "changelog-path": "CHANGELOG.md",
       "release-type": "simple",
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "component": "android"
     },
     "core": {
       "package-name": "core",
       "changelog-path": "CHANGELOG.md",
       "release-type": "simple",
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "component": "core"
     }
   },
+  "plugins": [
+    {
+      "type": "linked-versions",
+      "groupName": "Kotlin SDKs",
+      "components": [
+        "android", "core"
+      ]
+    }
+  ],
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
 }
