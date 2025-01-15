@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/core-v1.2.0...core-v1.3.0) (2025-01-15)
+
+
+### Miscellaneous Chores
+
+* **core:** Synchronize Kotlin SDKs versions
+
 ## [1.2.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/core-v1.1.0...core-v1.2.0) (2025-01-15)
 
 

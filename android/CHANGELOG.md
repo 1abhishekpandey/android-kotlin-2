@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/android-v1.2.0...android-v1.3.0) (2025-01-15)
+
+
+### Features
+
+* added some new comments ([f5c54c4](https://github.com/1abhishekpandey/abhishek-kotlin/commit/f5c54c4defb3f313879375ac6212aa4afaa69c86))
+
 ## [1.2.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/android-v1.1.0...android-v1.2.0) (2025-01-15)
 
 
