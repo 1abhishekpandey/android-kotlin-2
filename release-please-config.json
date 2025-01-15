@@ -1,10 +1,9 @@
 {
   "bootstrap-sha": "68c0c8c3697e26195eab397d2acd67489b71e667",
   "packages": {
-    "prerelease-type": "beta",
     "android": {
       "changelog-path": "CHANGELOG.md",
-      "release-type": "maven",
+      "release-type": "simple",
       "bump-minor-pre-major": false,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
@@ -12,7 +11,7 @@
     },
     "core": {
       "changelog-path": "CHANGELOG.md",
-      "release-type": "maven",
+      "release-type": "simple",
       "bump-minor-pre-major": false,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
