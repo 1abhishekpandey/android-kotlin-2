@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/core-v1.3.0...core-v1.4.0) (2025-01-15)
+
+
+### Features
+
+* added some new comments ([1776a13](https://github.com/1abhishekpandey/abhishek-kotlin/commit/1776a13b4e90e2655e98886d80a8a80a8fc86e7f))
+
 ## [1.3.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/core-v1.2.0...core-v1.3.0) (2025-01-15)
 
 

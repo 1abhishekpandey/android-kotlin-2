@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/android-v1.3.0...android-v1.4.0) (2025-01-15)
+
+
+### Miscellaneous Chores
+
+* **android:** Synchronize Kotlin SDKs versions
+
 ## [1.3.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/android-v1.2.0...android-v1.3.0) (2025-01-15)
 
 
