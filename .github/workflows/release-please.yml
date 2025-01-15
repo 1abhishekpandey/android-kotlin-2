@@ -28,4 +28,4 @@ jobs:
           release-type: "maven"
           package-name: "android, core"
           token: ${{ secrets.TOKEN }}
-          repo-url: "https://github.com/${{ github.repository }}"
+          repo-url: "https://github.com/1abhishekpandey/abhishek-kotlin"
