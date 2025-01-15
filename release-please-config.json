@@ -1,4 +1,5 @@
 {
+  "bootstrap-sha": "50198601acad0c091a4e65bf7277130a29d5b0f5",
   "packages": {
     "prerelease-type": "beta",
     "android": {
