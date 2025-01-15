@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/android-v1.4.0...android-v1.5.0) (2025-01-15)
+
+
+### Features
+
+* update comments ([0aab46f](https://github.com/1abhishekpandey/abhishek-kotlin/commit/0aab46fa627a88126fba83b4dcfcbf79a7e36c8b))
+
 ## [1.4.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/android-v1.3.0...android-v1.4.0) (2025-01-15)
 
 
