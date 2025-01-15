@@ -5,5 +5,5 @@ internal data class AppVersion(
     val previousVersionName: String?,
     val currentBuild: Long,
     val currentVersionName: String?,
-    // Some comments
+    // Some comments.
 )
