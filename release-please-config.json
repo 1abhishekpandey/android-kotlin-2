@@ -1,5 +1,4 @@
 {
-  "bootstrap-sha": "68c0c8c3697e26195eab397d2acd67489b71e667",
   "packages": {
     "android": {
       "changelog-path": "CHANGELOG.md",
