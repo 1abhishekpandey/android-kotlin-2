@@ -28,6 +28,12 @@ jobs:
         with:
           token: ${{ secrets.TOKEN }}
           # optional. customize path to release-please-config.json
-          config-file: release-please-config.json
+          config-file: releasePlease/release-please-config.json
           # optional. customize path to .release-please-manifest.json
-          manifest-file: .release-please-manifest.json
+          manifest-file: releasePlease/.release-please-manifest.json
+      
+      - name: Printh release outputs
+        run: echo "${{ steps.release-please.outputs }}"
+
+      # - run: npm publish --workflow packages/my-module
+      #   if: ${{ steps.release.outputs['packages/my-module--release_created'] }}

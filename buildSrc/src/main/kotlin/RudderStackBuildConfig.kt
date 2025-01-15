@@ -1,4 +1,9 @@
 import org.gradle.api.JavaVersion
+import java.io.File
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+import org.gradle.kotlin.dsl.provideDelegate
 
 object RudderStackBuildConfig {
 
@@ -16,9 +21,9 @@ object RudderStackBuildConfig {
     }
 
     object Version {
-
-        const val VERSION_NAME = "1.0.0"
-        const val VERSION_CODE = "1"
+        private const val SDK_VERSION_FILE_PATH = "releasePlease/.release-please-manifest.json"
+        val VERSION_NAME: String by lazy { getVersion(SDK_VERSION_FILE_PATH, "android") }
+        const val VERSION_CODE = "1" // TODO: Remove this
     }
 
     object PackageName {
@@ -74,4 +79,12 @@ interface ModuleConfig {
 
     val artifactId: String
     val pomPackaging: String
+}
+
+private fun getVersion(filePath: String, module: String): String {
+    val fileContent = File(filePath).readText()
+    val jsonElement = Json.parseToJsonElement(fileContent)
+    val jsonObject = jsonElement.jsonObject
+    return jsonObject[module]?.jsonPrimitive?.content
+        ?: throw IllegalStateException("Key 'android' not found in the manifest.")
 }
