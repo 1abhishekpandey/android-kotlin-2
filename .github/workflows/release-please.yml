@@ -1,4 +1,4 @@
-gcname: Run Release Please
+name: Run Release Please
 on:
   push:
     branches:
