@@ -77,6 +77,7 @@ open class Analytics protected constructor(
 
     init {
         processEvents()
+        // some changes
         setup()
         storeAnonymousId()
     }

@@ -1,0 +1,25 @@
+{
+  "name": "rudder-sdk-kotlin",
+  "version": "1.0.0",
+  "description": "Kotlin SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1abhishekpandey/abhishek-kotlin.git"
+  },
+  "keywords": [
+    "kotlin"
+  ],
+  "author": "Abhishek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1abhishekpandey/abhishek-kotlin/issues"
+  },
+  "homepage": "https://github.com/1abhishekpandey/abhishek-kotlin#readme",
+  "devDependencies": {
+    "release-please": "^16.15.0"
+  }
+}

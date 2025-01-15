@@ -27,6 +27,8 @@ tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
 
+apply(from = "detectChangedModules.gradle.kts")
+
 nexusPublishing {
     repositories {
         sonatype {
