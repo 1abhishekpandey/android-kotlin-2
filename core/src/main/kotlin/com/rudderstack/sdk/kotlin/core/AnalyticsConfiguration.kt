@@ -45,7 +45,7 @@ interface AnalyticsConfiguration {
 
     /**
      * Job for analytics coroutines.
-     * some change
+     * some change.
      */
     val analyticsJob: Job
 }
