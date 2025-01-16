@@ -2,7 +2,7 @@ name: Run Release Please
 on:
   push:
     branches:
-      - main
+      - develop
 
 permissions:
   contents: write
@@ -27,6 +27,7 @@ jobs:
         id: release-please
         with:
           token: ${{ secrets.TOKEN }}
+          target-branch: ${{ github.ref_name }}
           # optional. customize path to release-please-config.json
           config-file: releasePlease/release-please-config.json
           # optional. customize path to .release-please-manifest.json
