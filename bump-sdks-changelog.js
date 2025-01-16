@@ -181,10 +181,9 @@ function generateChangelog() {
   // Fetch the latest tag
   const tags = execSync("git tag").toString().split("\n").filter(Boolean);
   const oldVersionTag = tags[tags.length - 1]; // Last tag
-  const oldVersion = oldVersionTag.replace(/^v/, "");
 
   // Get commits for each module
-  const commits = getCommitsBetweenTags("v1.0.0", "HEAD");
+  const commits = getCommitsBetweenTags(oldVersionTag, "HEAD");
 
   if (commits.length === 0) {
     console.log("No new commits found.");
