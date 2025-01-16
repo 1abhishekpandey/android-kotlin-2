@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/v2.2.2...v2.3.0) (2025-01-16)
+
+### Features
+
+* add comments android ([f17cbfe](https://github.com/1abhishekpandey/abhishek-kotlin/commit/f17cbfe))
+
+
 ## [2.2.2](https://github.com/1abhishekpandey/abhishek-kotlin/compare/v2.2.1...v2.2.2) (2025-01-16)
 
 ### Fixes
