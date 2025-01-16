@@ -53,8 +53,10 @@ function bumpVersion(commits, currentVersion) {
 // Function to get commits affecting a specific module between the local HEAD and the base branch
 function getCommits(module) {
   try {
+    const tags = execSync("git tag").toString().split("\n").filter(Boolean);
+    const oldVersionTag = tags[tags.length - 1]; // Last tag
     const log = execSync(
-      `git log ${baseBranch}..HEAD --pretty=format:%s -- ${module}`
+      `git log ${oldVersionTag}..HEAD --pretty=format:%s -- ${module}`
     ).toString();
     return log.split("\n").filter(Boolean);
   } catch (error) {
