@@ -1,0 +1,39 @@
+name: Release from Develop to Main
+
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Release-Please CLI
+        run: npm install -g release-please
+
+      - name: Run Release-Please Manifest
+        id: release-please
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          release-please manifest --token="${GITHUB_TOKEN}" \
+            --target-branch=main \
+            --config-file=releasePlease/release-please-config.json \
+            --manifest-file=releasePlease/.release-please-manifest.json
+
+      - name: Checkout Release-Please Branch
+        run: |
+          git fetch --all
+          git checkout release-please--branches--main
+
+      - name: Merge Develop into Release-Please Branch
+        run: |
+          git merge origin/develop --no-edit || echo "Merge conflicts need manual resolution."
+          git push origin release-please--branches--main

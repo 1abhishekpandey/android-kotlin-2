@@ -1,40 +1,40 @@
-name: Run Release Please
-on:
-  push:
-    branches:
-      - develop
+# name: Run Release Please
+# on:
+#   push:
+#     branches:
+#       - develop
 
-permissions:
-  contents: write
-  pull-requests: write
+# permissions:
+#   contents: write
+#   pull-requests: write
 
-jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+# jobs:
+#   release-please:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v3
 
-      # - name: Run Release Please Action
-      #   uses: googleapis/release-please-action@v2
-      #   with:
-      #     command: manifest
-      #     token: ${{ secrets.TOKEN }}
-      #     default-branch: main
+#       # - name: Run Release Please Action
+#       #   uses: googleapis/release-please-action@v2
+#       #   with:
+#       #     command: manifest
+#       #     token: ${{ secrets.TOKEN }}
+#       #     default-branch: main
 
-      - name: Release Please
-        uses: googleapis/release-please-action@v4
-        id: release-please
-        with:
-          token: ${{ secrets.TOKEN }}
-          target-branch: "main"
-          # optional. customize path to release-please-config.json
-          config-file: releasePlease/release-please-config.json
-          # optional. customize path to .release-please-manifest.json
-          manifest-file: releasePlease/.release-please-manifest.json
+#       - name: Release Please
+#         uses: googleapis/release-please-action@v4
+#         id: release-please
+#         with:
+#           token: ${{ secrets.TOKEN }}
+#           target-branch: "main"
+#           # optional. customize path to release-please-config.json
+#           config-file: releasePlease/release-please-config.json
+#           # optional. customize path to .release-please-manifest.json
+#           manifest-file: releasePlease/.release-please-manifest.json
       
-      - name: Printh release outputs
-        run: echo "${{ steps.release-please.outputs }}"
+#       - name: Printh release outputs
+#         run: echo "${{ steps.release-please.outputs }}"
 
-      # - run: npm publish --workflow packages/my-module
-      #   if: ${{ steps.release.outputs['packages/my-module--release_created'] }}
+#       # - run: npm publish --workflow packages/my-module
+#       #   if: ${{ steps.release.outputs['packages/my-module--release_created'] }}
