@@ -114,19 +114,11 @@ function writeChangelogForModule(module, newVersion, oldVersion, commits) {
   const versionTag = `v${newVersion}`;
   const oldTag = `v${oldVersion}`;
   const date = new Date().toISOString().split("T")[0];
-
-  let changelogContent = "";
-
-  // If CHANGELOG.md does not exist or is empty, initialize it with # Changelog
   const changelogFile = `${module}/CHANGELOG.md`;
-  if (
-    !fs.existsSync(changelogFile) ||
-    fs.readFileSync(changelogFile, "utf-8").trim() === ""
-  ) {
-    changelogContent += "# Changelog\n\n";
-  }
+  const header = "# Changelog\n\n";
 
-  changelogContent += `## [${newVersion}](${REPO_URL}/compare/${oldTag}...${versionTag}) (${date})\n\n`;
+  // Generate changelog content for this update
+  let changelogContent = `## [${newVersion}](${REPO_URL}/compare/${oldTag}...${versionTag}) (${date})\n\n`;
 
   const { breakingChanges, features, fixes } = classifyCommits(commits);
 
@@ -160,17 +152,30 @@ function writeChangelogForModule(module, newVersion, oldVersion, commits) {
     changelogContent += "\n";
   }
 
-  // Add default changelog entry for modules with no changes
+  // Add default changelog entry if no changes
   if (!breakingChanges.length && !features.length && !fixes.length) {
     changelogContent += "### Miscellaneous Chores\n\n";
     changelogContent += `* **${module}:** Synchronize Kotlin SDKs versions\n\n`;
   }
 
-  // Prepend new changelog to the existing content
-  const existingContent = fs.existsSync(changelogFile)
-    ? fs.readFileSync(changelogFile, "utf-8")
-    : "";
-  fs.writeFileSync(changelogFile, changelogContent + existingContent);
+  // Handle file creation or update
+  if (!fs.existsSync(changelogFile)) {
+    // If file doesn't exist, create it with the header and changelog content
+    fs.writeFileSync(changelogFile, header + changelogContent);
+    console.log(`Changelog for module ${module} created.`);
+  } else {
+    // If file exists, prepend the new changelog after removing the first line
+    const existingContent = fs.readFileSync(changelogFile, "utf-8");
+    const existingWithoutHeader = existingContent
+      .split("\n")
+      .slice(1)
+      .join("\n");
+    fs.writeFileSync(
+      changelogFile,
+      header + changelogContent + existingWithoutHeader
+    );
+    console.log(`Changelog for module ${module} updated.`);
+  }
 }
 
 // Main logic
