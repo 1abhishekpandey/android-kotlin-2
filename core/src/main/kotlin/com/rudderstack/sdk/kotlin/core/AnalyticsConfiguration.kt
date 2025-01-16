@@ -19,7 +19,7 @@ interface AnalyticsConfiguration {
 
     /**
      * Storage implementation for the analytics module.
-     * Some more changes.........
+     * Some more changes..........
      */
     val storage: Storage
 
