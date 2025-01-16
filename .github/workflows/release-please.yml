@@ -27,7 +27,7 @@ jobs:
         id: release-please
         with:
           token: ${{ secrets.TOKEN }}
-          target-branch: ${{ github.ref_name }}
+          target-branch: "main"
           # optional. customize path to release-please-config.json
           config-file: releasePlease/release-please-config.json
           # optional. customize path to .release-please-manifest.json
