@@ -2,7 +2,7 @@ const fs = require("fs");
 const { execSync } = require("child_process");
 
 const CHANGELOG_FILE = "CHANGELOG.md";
-const REPO_URL = "https://github.com/1abhishekpandey/abhishek-kotlin";
+const REPO_URL = "https://github.com/1abhishekpandey/android-kotlin-2";
 const rootVersionFile = "version.json"; // Path to the centralized version file
 
 // Function to get the current version from version.json
