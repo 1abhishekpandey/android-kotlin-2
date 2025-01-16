@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/1abhishekpandey/abhishek-kotlin/compare/v2.2.0...v2.2.1) (2025-01-16)
+
+### Fixes
+
+* add comments core ([edce655](https://github.com/1abhishekpandey/abhishek-kotlin/commit/edce655))
+
+
 ## [2.2.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/v2.1.0...v2.2.0) (2025-01-16)
 
 ### Features
