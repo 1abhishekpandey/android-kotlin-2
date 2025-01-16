@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/v2.3.0...v3.0.0) (2025-01-16)
+
+### ⚠ BREAKING CHANGES
+
+* add comments core ([32918c1](https://github.com/1abhishekpandey/abhishek-kotlin/commit/32918c1))
+
+### Features
+
+* add another comments core ([226e30e](https://github.com/1abhishekpandey/abhishek-kotlin/commit/226e30e))
+* add comments core ([32918c1](https://github.com/1abhishekpandey/abhishek-kotlin/commit/32918c1))
+
+
 ## [2.3.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/v2.2.2...v2.3.0) (2025-01-16)
 
 ### Fixes

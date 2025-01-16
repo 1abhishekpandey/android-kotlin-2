@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/v2.3.0...v3.0.0) (2025-01-16)
+
+### Miscellaneous Chores
+
+* **android:** Synchronize Kotlin SDKs versions
+
+
 ## [2.3.0](https://github.com/1abhishekpandey/abhishek-kotlin/compare/v2.2.2...v2.3.0) (2025-01-16)
 
 ### Features
