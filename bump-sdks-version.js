@@ -16,12 +16,22 @@ function getCurrentVersion(filePath) {
   return { major, minor, patch };
 }
 
-// Function to write the updated version back to the JSON file
-function writeVersion(filePath, version) {
-  const newVersion = {
-    SDK_VERSION: `${version.major}.${version.minor}.${version.patch}`,
-  };
-  fs.writeFileSync(filePath, JSON.stringify(newVersion, null, 2));
+// Function to get commits affecting a specific module between the local HEAD and the base branch
+function getCommits(module) {
+  try {
+    const tags = execSync("git tag").toString().split("\n").filter(Boolean);
+    const oldVersionTag = tags[tags.length - 1]; // Last tag
+    const log = execSync(
+      `git log ${oldVersionTag}..HEAD --pretty=format:%s -- ${module}`
+    ).toString();
+    return log.split("\n").filter(Boolean);
+  } catch (error) {
+    console.error(
+      `Error fetching commits for module ${module}:`,
+      error.message
+    );
+    return [];
+  }
 }
 
 // Function to determine the next version based on commit messages
@@ -48,24 +58,6 @@ function bumpVersion(commits, currentVersion) {
   }
 
   return { major, minor, patch };
-}
-
-// Function to get commits affecting a specific module between the local HEAD and the base branch
-function getCommits(module) {
-  try {
-    const tags = execSync("git tag").toString().split("\n").filter(Boolean);
-    const oldVersionTag = tags[tags.length - 1]; // Last tag
-    const log = execSync(
-      `git log ${oldVersionTag}..HEAD --pretty=format:%s -- ${module}`
-    ).toString();
-    return log.split("\n").filter(Boolean);
-  } catch (error) {
-    console.error(
-      `Error fetching commits for module ${module}:`,
-      error.message
-    );
-    return [];
-  }
 }
 
 // Utility function to get the highest version between two versions
@@ -105,14 +97,30 @@ sdkModules.forEach((module) => {
   }
 });
 
-// Write the synchronized version to the centralized version file
-if (newVersion) {
+// Function to write the updated version back to the JSON file
+function writeVersion(filePath, version) {
+  const newVersion = {
+    SDK_VERSION: `${version.major}.${version.minor}.${version.patch}`,
+  };
+  fs.writeFileSync(filePath, JSON.stringify(newVersion, null, 2));
+}
+
+const areVersionsEqual = (version1, version2) =>
+  version1.major === version2.major &&
+  version1.minor === version2.minor &&
+  version1.patch === version2.patch;
+
+const currentVersion = getCurrentVersion(rootVersionFile);
+
+if (newVersion && !areVersionsEqual(newVersion, currentVersion)) {
   try {
     writeVersion(rootVersionFile, newVersion);
     console.log(
       `Updated centralized version to ${newVersion.major}.${newVersion.minor}.${newVersion.patch}`
     );
   } catch (error) {
-    console.error(`Error updating root version file:`, error.message);
+    console.error("Error updating root version file:", error.message);
   }
+} else {
+  console.log("No version bump required.");
 }
