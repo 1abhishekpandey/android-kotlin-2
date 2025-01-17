@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/1abhishekpandey/android-kotlin-2/compare/v3.0.0...v3.1.0) (2025-01-17)
+
+### Features
+
+* add comments both android and core ([2ec5c9f](https://github.com/1abhishekpandey/android-kotlin-2/commit/2ec5c9f))
+
+
 ## [3.0.0](https://github.com/1abhishekpandey/android-kotlin-2/compare/v2.3.0...v3.0.0) (2025-01-16)
 
 ### Miscellaneous Chores
